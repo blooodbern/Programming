@@ -11,24 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Recycler(private val context: Context, private val animals: List<AnimalBase>) : RecyclerView.Adapter<Recycler.AnimalRecyclerHolder>() {
 
-    /*private val onVoice: (AnimalBase, (IHasVoice) -> String) -> Unit = { animal, voice ->
-
-        val builder = AlertDialog.Builder(context)
-
-        with(builder) {
-
-            setTitle("${animal.javaClass.simpleName} ${animal.name} says:")
-
-            setMessage(voice(animal as IHasVoice))
-
-            setPositiveButton("OK", null)
-
-            show()
-
-        }
-
-    }*/
-
     private val onMove: (AnimalBase) -> Unit =
         {
             animal -> val intent = Intent (context, InfoActivity::class.java)
