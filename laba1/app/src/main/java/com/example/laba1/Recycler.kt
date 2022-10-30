@@ -14,14 +14,14 @@ class Recycler(private val context: Context, private val animals: List<AnimalBas
     private val onMove: (AnimalBase) -> Unit =
         {
             animal -> val intent = Intent (context, InfoActivity::class.java)
-            intent.putExtra("info",animal.move())
+            intent.putExtra("info", animal.move())
             context.startActivity(intent)
         }
 
     private val onHunt: (IHunter) -> Unit =
         {
             animal -> val intent = Intent (context, InfoActivity::class.java)
-            intent.putExtra("info",animal.hunt())
+            intent.putExtra("info", animal.hunt())
             context.startActivity(intent)
         }
 
@@ -41,11 +41,11 @@ class Recycler(private val context: Context, private val animals: List<AnimalBas
 
         if(animal is IHunter) {
 
-            holder.animalMovement.setOnClickListener { onHunt(animal) }
+            holder.animalHunt.setOnClickListener { onHunt(animal) }
 
         } else {
 
-            holder.animalMovement.visibility = View.GONE
+            holder.animalHunt.visibility = View.GONE
 
         }
 
